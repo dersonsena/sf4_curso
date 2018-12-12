@@ -59,6 +59,11 @@ class Post
      */
     private $updatedAt;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="postCollection")
+     */
+    private $author;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -187,6 +192,24 @@ class Post
     public function setUpdatedAt($updatedAt): Post
     {
         $this->updatedAt = $updatedAt;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param mixed $author
+     * @return Post
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
         return $this;
     }
 }
