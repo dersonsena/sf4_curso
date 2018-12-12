@@ -1,0 +1,15 @@
+{% extends 'admin/admin-base.html.twig' %}
+
+{% block title %}Posts{% endblock %}
+{% block page_subtitle %}Novo Post{% endblock %}
+
+{% block body %}
+
+    {{ form_start(form, {attr: {'novalidate': 'novalidate'}}) }}
+        {{ form_widget(form) }}
+        <button type="submit" class="btn btn-primary btn-lg">
+            <i class="fa fa-plus"></i> Adicionar
+        </button>
+    {{ form_end(form) }}
+
+{% endblock %}
